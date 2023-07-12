@@ -2,7 +2,7 @@
 CREATE OR REPLACE FUNCTION update_comment_count()
 RETURNS TRIGGER AS $commentCount$
 BEGIN 
-UPDATE photo
+UPDATE photos
 SET comment_count = (SELECT COUNT(*)
 					FROM comments
 					WHERE photo_id=NEW.photo_id)
