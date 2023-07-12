@@ -19,6 +19,10 @@ AFTER INSERT ON comments
 FOR EACH ROW
 EXECUTE FUNCTION update_comment_count();
 
+-- //creating new coloum in photos table
+ALTER TABLE photos
+ADD COLUMN comments_count INTEGER;
+
 
 -- // when we insert in comment table it would count the number of comment 
 
